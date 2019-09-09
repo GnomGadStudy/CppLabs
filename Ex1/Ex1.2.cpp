@@ -1,23 +1,23 @@
-void InitializationArray();
-void GetArray();
-void transformation();
+#include <iostream>
+#include <iomanip>
+#include "Ex1.2.h"
 
-int main()
+void Ex1_2::Start()
 {
-    return 0;
+    
 }
 
-void InitializationArray()
-{
-
-}
-
-void GetArray()
+void Ex1_2::InitializationArray()
 {
 
 }
 
-void transformation()
+void Ex1_2::GetArray()
+{
+
+}
+
+void Ex1_2::transformation()
 {
     
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "ManagementEx1.h"
 #include "Ex1.1.h"
+#include "Ex1.2.h"
 
 using std::cout;
 using std::endl;
@@ -29,7 +30,8 @@ void ManagementEx1::Ex11()
 }
 void ManagementEx1::Ex12()
 {
-
+    Ex1_2 ex;
+    ex.Start();
 }
 void ManagementEx1::Ex13()
 {
