@@ -9,6 +9,8 @@
 *.userosscache
 *.sln.docstates
 
+kek.exe
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
