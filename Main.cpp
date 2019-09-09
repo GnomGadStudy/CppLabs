@@ -1,21 +1,8 @@
-#include "Ex1/Ex1.1.h"
+#include "Ex1/ManagementEx1.h"
 
 int main()
 {
-	
+	ManagementEx1 m1;
+	m1.Start();
 	return 0;
-}
-
-void Ex11()
-{
-	Ex1_1 ex;
-	ex.Start();
-}
-void Ex12()
-{
-	
-}
-void Ex13()
-{
-	
 }
