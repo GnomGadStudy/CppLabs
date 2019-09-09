@@ -18,6 +18,8 @@ void ManagementEx1::Start()
         {
             case 0: cout<<"Exit"<<endl;break;
             case 1: cout<<"Ex1.1"<<endl; Ex11();break;
+            case 2: cout<<"Ex1.2"<<endl; Ex12();break;
+            case 3: cout<<"Ex1.3"<<endl; Ex13();break;
             default : cout <<"unknown character"<<endl;break;
         }
     }

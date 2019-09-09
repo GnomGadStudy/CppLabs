@@ -5,9 +5,9 @@ class Ex1_2
 {
 
 public:
-    void InitializationArray();
-    void GetArray();
-    void transformation();
+    void ArrayInitialization(int** mass);
+    void GetArray(int** mass);
+    int* Transformation(int** mass);
     void Start();
 };
 
