@@ -1,11 +1,17 @@
 #include <iostream>
+using std::cout;
+using std::endl;
 
-#include "Ex1/ManagementEx1.h"
-
-
+void inter(int* numbers)
+{
+	numbers[1]=10;
+	cout<<numbers[1]<<endl;
+}
 int main()
 {
-	ManagementEx1 m1;
-	m1.Start();
+	int nums[] = {1,5,2};
+	cout<<nums[1]<<endl;
+	inter(nums);
+	cout<<nums[1]<<endl;
 	return 0;
 }
