@@ -10,6 +10,8 @@
 *.sln.docstates
 
 kek.exe
+e.exe
+a.exe
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
