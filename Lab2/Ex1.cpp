@@ -5,10 +5,15 @@
 #include <iostream>
 
 int main(){
-    Vector mat;
+    Matrix mat;
     mat.ArrayInitialization();
+    
     mat.GetArray();
-    mat.Transformation();
-    mat.~Vector();
+    ++mat;
+    mat.GetArray();
+    mat++;
+    mat.GetArray();
+
+    mat.~Matrix();
     return 0;
 }

@@ -14,6 +14,17 @@ Matrix::Matrix(int size_){
     std::cout<<"Empty array has created"<<std::endl;
 }
 
+Matrix::Matrix(int** mass_,int size_){
+    size = size_;
+    mass = new int*[size_];
+    for (int i = 0; i < size_; i++)
+        mass[i] = new int[size_];
+
+    for (int i = 0; i < size_; i++)
+        for (int j = 0; j < size_; j++)
+            mass[i][j] = mass_[i][j];
+}
+
 void Matrix::ArrayInitialization(){
     for (int i = 0; i < size; i++)
         for (int j = 0; j < size; j++)
@@ -48,6 +59,37 @@ int* Matrix::Transformation()
     std::cout<<"Array has Transformated"<<std::endl;
 
    return mass1D;
+}
+
+int Matrix::At(int i, int j) const{
+    return mass[i][j];
+}
+
+void Matrix::SetAt(int i,int j,int n){
+    mass[i][j] = n;
+}
+
+Matrix& Matrix::operator++(){
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
+            mass[i][j]++;
+    return *this;
+}
+
+Matrix& Matrix::operator--(){
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
+            mass[i][j]--;
+    return *this;
+}
+
+///////////////////////////////// 
+Matrix Matrix::operator++(int){
+    Matrix tmp(mass,size);
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
+            mass[i][j]++;
+    return tmp;
 }
 
 Matrix::~Matrix(){
