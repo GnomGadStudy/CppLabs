@@ -15,14 +15,16 @@ Matrix::Matrix(int size_){
 }
 
 Matrix::Matrix(int** mass_,int size_){
-    size = size_;
-    mass = new int*[size_];
-    for (int i = 0; i < size_; i++)
-        mass[i] = new int[size_];
+    this->size = size_;
+    this->mass = new int*[size_];
 
-    for (int i = 0; i < size_; i++)
-        for (int j = 0; j < size_; j++)
-            mass[i][j] = mass_[i][j];
+    for (int i = 0; i < size_; i++) {
+        this->mass[i] = new int[size_];
+        for (int j = 0; j < size_; j++) {
+            this->mass[i][j] = mass_[i][j];
+            }
+        }
+        
 }
 
 void Matrix::ArrayInitialization(){
@@ -85,10 +87,14 @@ Matrix& Matrix::operator--(){
 
 ///////////////////////////////// 
 Matrix Matrix::operator++(int){
-    Matrix tmp(mass,size);
-    for (int i = 0; i < size; i++)
-        for (int j = 0; j < size; j++)
-            mass[i][j]++;
+    Matrix tmp{ mass, size };
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+                mass[i][j]++;
+        }
+    }
+        
     return tmp;
 }
 

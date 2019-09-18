@@ -8,6 +8,7 @@ public:
     Matrix();
     Matrix(int size_);
     Matrix(int** mass_, int size_);
+    Matrix(const Matrix& matrix);
     void ArrayInitialization();
     void GetArray();
     int* Transformation();

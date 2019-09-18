@@ -9,11 +9,10 @@ int main(){
     mat.ArrayInitialization();
     
     mat.GetArray();
-    ++mat;
-    mat.GetArray();
     mat++;
     mat.GetArray();
 
     mat.~Matrix();
+
     return 0;
 }
