@@ -15,6 +15,23 @@ Vector::Vector(int size_){
     std::cout<<"Empty array has created"<<std::endl;
 }
 
+Vector::Vector(int** mass_,int size_,int* mass1D_){
+    this->size = size_;
+    this->mass = new int*[size_];
+    this->mass1D = nullptr;
+    for (int i = 0; i < size_; i++) {
+        this->mass[i] = new int[size_];
+        for (int j = 0; j < size_; j++) {
+            this->mass[i][j] = mass_[i][j];
+            }
+        }
+        
+}
+Vector::Vector(const Vector& vector) : Vector(vector.mass, vector.size, vector.mass1D) {
+}
+
+Vector::Vector(const Vector&& vector) : mass(vector.mass), size(vector.size), mass1D(vector.mass1D) {
+}
 void Vector::ArrayInitialization(){
     for (int i = 0; i < size; i++)
         for (int j = 0; j < size; j++)
@@ -48,6 +65,31 @@ int* Vector::Transformation()
     std::cout<<"Array has Transformated"<<std::endl;
 
    return mass1D;
+}
+
+Vector& Vector::operator++(){
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
+            mass[i][j]++;
+    return *this;
+}
+
+Vector& Vector::operator--(){
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size; j++)
+            mass[i][j]--;
+    return *this;
+}
+
+Vector Vector::operator++(int a) {
+    Vector tmp{ mass, size,mass1D };
+    ++*this;
+    return tmp;
+}
+Vector Vector::operator--(int a){
+    Vector tmp(*this);
+    --*this;
+    return tmp;
 }
 
 int& Vector::operator [](int index)const{

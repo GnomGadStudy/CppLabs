@@ -6,17 +6,13 @@
 
 int main(){
     
-    Matrix mat;
+    Vector mat;
     mat.ArrayInitialization();
     mat.GetArray();
+    ++mat;
     mat++;
     mat--;
-    mat--;
-    mat--;
-    mat--;
-    mat--;
-    mat--;
-    mat++;
+    --mat;
     mat.GetArray();
    
     return 0;
