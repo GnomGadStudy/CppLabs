@@ -14,10 +14,10 @@ Matrix::Matrix(int size_){
     std::cout<<"Empty array has created"<<std::endl;
 }
 
-Matrix::Matrix(int** mass_,int size_){
+Matrix::Matrix(int** mass_,int size_,int* mass1D_){
     this->size = size_;
     this->mass = new int*[size_];
-
+    this->mass1D = nullptr;
     for (int i = 0; i < size_; i++) {
         this->mass[i] = new int[size_];
         for (int j = 0; j < size_; j++) {
@@ -26,7 +26,11 @@ Matrix::Matrix(int** mass_,int size_){
         }
         
 }
+Matrix::Matrix(const Matrix& matrix) : Matrix(matrix.mass, matrix.size, matrix.mass1D) {
+}
 
+Matrix::Matrix(const Matrix&& matrix) : mass(matrix.mass), size(matrix.size), mass1D(matrix.mass1D) {
+}
 void Matrix::ArrayInitialization(){
     for (int i = 0; i < size; i++)
         for (int j = 0; j < size; j++)
@@ -85,20 +89,18 @@ Matrix& Matrix::operator--(){
     return *this;
 }
 
-///////////////////////////////// 
-Matrix Matrix::operator++(int){
-    Matrix tmp{ mass, size };
-
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < size; j++) {
-                mass[i][j]++;
-        }
-    }
-        
+Matrix Matrix::operator++(int a) {
+    Matrix tmp{ mass, size,mass1D };
+    ++*this;
     return tmp;
 }
-
+Matrix Matrix::operator--(int a){
+    Matrix tmp(*this);
+    --*this;
+    return tmp;
+}
 Matrix::~Matrix(){
+    std::cout << " Matix has been removed" << std::endl;
     delete[] mass1D;
     mass1D = nullptr;
 
