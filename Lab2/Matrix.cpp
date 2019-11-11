@@ -89,12 +89,12 @@ Matrix& Matrix::operator--(){
     return *this;
 }
 
-Matrix Matrix::operator++(int a) {
+Matrix& Matrix::operator++(int a) {
     Matrix tmp{ mass, size,mass1D };
     ++*this;
     return tmp;
 }
-Matrix Matrix::operator--(int a){
+Matrix& Matrix::operator--(int a){
     Matrix tmp(*this);
     --*this;
     return tmp;

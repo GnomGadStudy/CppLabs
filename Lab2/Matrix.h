@@ -16,8 +16,8 @@ public:
     int At(int i,int j) const;
     void SetAt(int i, int j, int n);
     //post
-    Matrix operator++(int a);
-    Matrix operator--(int a);
+    Matrix& operator++(int a);
+    Matrix& operator--(int a);
     //pref
     Matrix& operator++(void);
     Matrix& operator--(void);

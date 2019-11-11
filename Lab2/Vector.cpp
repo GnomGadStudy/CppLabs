@@ -81,12 +81,12 @@ Vector& Vector::operator--(){
     return *this;
 }
 
-Vector Vector::operator++(int a) {
+Vector& Vector::operator++(int a) {
     Vector tmp{ mass, size,mass1D };
     ++*this;
     return tmp;
 }
-Vector Vector::operator--(int a){
+Vector& Vector::operator--(int a){
     Vector tmp(*this);
     --*this;
     return tmp;

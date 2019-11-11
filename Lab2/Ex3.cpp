@@ -22,8 +22,8 @@ int main(){
     st2.imitation();
     st1.imitation();
     st3.imitation();;
-   // st3.serialize("kek.txt");
- //   st3.deserialize("kek.txt");
+    st3.serialize("kek.txt");
+    st3.deserialize("kek.txt");
     std::vector<Stadium> stadiums;
     stadiums.push_back(st1);
     stadiums.push_back(st2);

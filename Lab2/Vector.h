@@ -16,8 +16,8 @@ public:
     Vector& operator++(void);
     Vector& operator--(void);
 
-    Vector operator++(int a);
-    Vector operator--(int a);
+    Vector& operator++(int a);
+    Vector& operator--(int a);
     int& operator [](int index)const;
 
     ~Vector();
