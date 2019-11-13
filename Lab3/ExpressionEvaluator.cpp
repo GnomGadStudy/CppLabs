@@ -1,4 +1,5 @@
 #include <iostream>
+#include<ctime>
 #include"ExpressionEvaluator.h"
 
 ExpressionEvaluator::ExpressionEvaluator():ExpressionEvaluator(20){
@@ -36,6 +37,12 @@ void ExpressionEvaluator::setOperands(double op[], size_t len){
     }
 }
 
+void ExpressionEvaluator::setRandomOperands(){
+    srand(time(0));
+    for(int i=0;i<length;i++)
+        operands[i] = rand()%9;
+}
+
 int ExpressionEvaluator::getLenght(){
     return length;
 }
@@ -43,7 +50,7 @@ int ExpressionEvaluator::getLenght(){
 std::string ExpressionEvaluator::getString(){
     std::string s = "(";
     for(int i=0;i<length;i++){
-        s+=operands[i];
+        s+=operands[i]+48;
         if(i+1<length)
             s+="+";
     }

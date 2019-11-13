@@ -10,6 +10,7 @@ protected:
     int length;
     double* operands;
     void setNullOperands();
+    void setRandomOperands();
     std::string getString();
 public:
     ExpressionEvaluator();
