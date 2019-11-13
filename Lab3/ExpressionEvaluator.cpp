@@ -9,7 +9,7 @@ ExpressionEvaluator::ExpressionEvaluator():ExpressionEvaluator(20){
 ExpressionEvaluator::ExpressionEvaluator(int len){
     length = len;
     setNullOperands();
-    std::cout<<"Array has been created"<<std::endl;
+    std::cout<<"Array has been created, length = "<<len<<std::endl;
 }
 void ExpressionEvaluator::setNullOperands(){
     operands = new double[length];
@@ -22,8 +22,10 @@ void ExpressionEvaluator::setNullOperands(){
 } 
 
 void ExpressionEvaluator::setOperand(size_t pos,double x){
-    if(pos<length)
+    if(pos<length){
         operands[pos] = x;
+        std::cout<<"Operand "<<x<<" has been set in pos "<<pos<<std::endl;
+    }
     else
          std::cout<<"Wrong index"<<std::endl;
 }
@@ -35,6 +37,7 @@ void ExpressionEvaluator::setOperands(double op[], size_t len){
     for(int i =0;i<length;i++){
         operands[i] = op[i];
     }
+    std::cout<<"Operands has been set, new length  "<<len<<std::endl;
 }
 
 void ExpressionEvaluator::setRandomOperands(){
@@ -48,7 +51,13 @@ int ExpressionEvaluator::getLenght(){
 }
 
 std::string ExpressionEvaluator::getString(char x){
-    std::string s = "(";
+    
+    std::string s ="";
+
+    for(int i =0;i<length;i++)
+        s+= "Op"+std::to_string(i+1)+" ";
+    s+=" : ";
+    
     for(int i=0;i<length;i++){
         if(operands[i]<0)
             s+="(";
@@ -60,14 +69,19 @@ std::string ExpressionEvaluator::getString(char x){
             s+=x;
         s+=" ";
     }
-    s+=(")");
+    s+="-> "+std::to_string(calculate());
     return s;
 }
 
 std::string ExpressionEvaluator::getString(char x,char y){
     bool flag = true;
     int ii =1;
-    std::string s = "(";
+
+    std::string s ="";
+    for(int i =0;i<length;i++)
+        s+= "Op"+std::to_string(i+1)+" ";
+    s+=" : ";
+
     for(int i=0;i<length;i++){
         if(operands[i]<0)
             s+="(";
@@ -83,6 +97,6 @@ std::string ExpressionEvaluator::getString(char x,char y){
         }   
         s+=" ";
     }
-    s+=(")");
+    s+="-> "+std::to_string(calculate());
     return s;
 }

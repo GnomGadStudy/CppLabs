@@ -5,6 +5,8 @@
 Divisor::Divisor(){
     setRandomOperands();
 }
+Divisor::Divisor(int n):ExpressionEvaluator(n){
+}
 double Divisor::calculate() {
     double tmp =operands[0];
     for(int i=1;i<length;i++)

@@ -3,7 +3,10 @@
 #include "Summator.h"
 
 Summator::Summator(){
-    setRandomOperands();
+    setNullOperands();
+}
+Summator::Summator(int n):ExpressionEvaluator(n){
+    
 }
 double Summator::calculate() {
     double tmp =0;

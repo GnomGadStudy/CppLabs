@@ -8,6 +8,9 @@
 CustomExpressionEvaluator::CustomExpressionEvaluator(){
     setRandomOperands();
 }
+CustomExpressionEvaluator::CustomExpressionEvaluator(int n):ExpressionEvaluator(n){
+
+}
 double CustomExpressionEvaluator::calculate() {
     double tmp =operands[0];
     bool flag = true;

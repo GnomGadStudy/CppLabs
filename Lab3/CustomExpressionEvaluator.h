@@ -9,6 +9,7 @@
 class CustomExpressionEvaluator: public ExpressionEvaluator, public IShuffle{
 public:
     CustomExpressionEvaluator();
+    CustomExpressionEvaluator(int);
     double calculate() override;
     void logToScreen() override;
     void logToFile(const std::string& ) override;

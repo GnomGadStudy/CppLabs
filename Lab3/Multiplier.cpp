@@ -5,6 +5,8 @@
 Multiplier::Multiplier(){
     setRandomOperands();
 }
+Multiplier::Multiplier(int n):ExpressionEvaluator(n){
+}
 double Multiplier::calculate() {
     double tmp =operands[0];
     for(int i=1;i<length;i++)
@@ -13,7 +15,7 @@ double Multiplier::calculate() {
 }
 
 void Multiplier::logToScreen(){
-    std::cout<<getString('*')<<std::endl;
+    std::cout<<getString('x')<<std::endl;
 }
 
 void Multiplier::logToFile(const std::string& filename){
@@ -21,7 +23,7 @@ void Multiplier::logToFile(const std::string& filename){
     out.open(filename);
     if (out.is_open())
     {
-        out << getString('*') << std::endl;
+        out << getString('x') << std::endl;
     }
     out.close();
 }

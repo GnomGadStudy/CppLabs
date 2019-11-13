@@ -10,6 +10,7 @@ private:
    
 public:
     Summator();
+    Summator(int);
     double calculate() override;
     void logToScreen() override;
     void logToFile(const std::string& ) override;

@@ -11,6 +11,7 @@ private:
     
 public:
     Multiplier();
+    Multiplier(int);
     double calculate() override;
     void logToScreen() override;
     void logToFile(const std::string& ) override;

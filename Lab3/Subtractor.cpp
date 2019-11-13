@@ -5,6 +5,9 @@
 Subtractor::Subtractor(){
     setRandomOperands();
 }
+Subtractor::Subtractor(int n):ExpressionEvaluator(n){
+
+}
 double Subtractor::calculate() {
     double tmp =0;
     for(int i;i<length;i++)
