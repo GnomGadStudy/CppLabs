@@ -14,9 +14,10 @@ public:
     double calculate() override;
     void logToScreen() override;
     void logToFile(const std::string& ) override;
-    
+
     void shuffle() override;
     void lshuffle(size_t, size_t) override;
+    ~Divisor() override;
 };
 
 

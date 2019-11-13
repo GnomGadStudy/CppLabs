@@ -17,6 +17,7 @@ public:
 
     void shuffle() override;
     void lshuffle(size_t, size_t) override;
+    ~Multiplier() override;
 };
 
 

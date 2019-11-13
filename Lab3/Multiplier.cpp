@@ -43,3 +43,8 @@ void Multiplier::lshuffle(size_t s, size_t e){
     }
   }
 }
+
+Multiplier::~Multiplier(){
+     delete[] operands;
+    std::cout<<"Multiplier has been deleted"<<std::endl;
+}

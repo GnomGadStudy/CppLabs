@@ -16,10 +16,10 @@ void ExpressionEvaluator::setNullOperands(){
     for(int i=0;i<length;i++)
         operands[i]=0;
 }
-ExpressionEvaluator::~ExpressionEvaluator(){
+ ExpressionEvaluator::~ExpressionEvaluator(){
     delete[] operands;
-    std::cout<<"Array has been non-virtual deleted"<<std::endl;
-}
+    std::cout<<"ExpressionEvaluator has been deleted"<<std::endl;
+} 
 
 void ExpressionEvaluator::setOperand(size_t pos,double x){
     if(pos<length)
@@ -50,9 +50,38 @@ int ExpressionEvaluator::getLenght(){
 std::string ExpressionEvaluator::getString(char x){
     std::string s = "(";
     for(int i=0;i<length;i++){
-        s+=operands[i]+48;
+        if(operands[i]<0)
+            s+="(";
+        s+= std::to_string(operands[i]);
+        if(operands[i]<0)
+            s+=")";
+        s+=" ";
         if(i+1<length)
             s+=x;
+        s+=" ";
+    }
+    s+=(")");
+    return s;
+}
+
+std::string ExpressionEvaluator::getString(char x,char y){
+    bool flag = true;
+    int ii =1;
+    std::string s = "(";
+    for(int i=0;i<length;i++){
+        if(operands[i]<0)
+            s+="(";
+        s+=std::to_string(operands[i]);
+        s+="/";
+        s+=std::to_string(ii++);
+        if(operands[i]<0)
+            s+=")";
+        s+=" ";
+        if(i+1<length){
+                s+= flag?x:y;
+                flag=!flag;
+        }   
+        s+=" ";
     }
     s+=(")");
     return s;

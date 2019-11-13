@@ -13,6 +13,7 @@ protected:
     void setNullOperands();
     void setRandomOperands();
     std::string getString(char);
+    std::string getString(char,char);
 public:
     ExpressionEvaluator();
     ExpressionEvaluator(int);

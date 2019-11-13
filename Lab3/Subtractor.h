@@ -13,6 +13,7 @@ public:
     double calculate() override;
     void logToScreen() override;
     void logToFile(const std::string& ) override;
+    ~Subtractor() override;
 };
 
 

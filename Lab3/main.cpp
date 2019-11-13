@@ -7,13 +7,9 @@
 #include "Subtractor.h"
 #include "Multiplier.h"
 #include "Divisor.h"
-
+#include "CustomExpressionEvaluator.h"
 int main(){
-    Divisor sm;
-    sm.logToScreen();
-    sm.shuffle();
-    sm.logToScreen();
-    std::cout<<std::fixed<<std::setprecision(15)<<sm.calculate()<<std::endl;
-    sm.logToFile("kek.txt");
+    
+    //std::cout<<std::fixed<<std::setprecision(15)<<.calculate()<<std::endl;
     return 0;   
 }
