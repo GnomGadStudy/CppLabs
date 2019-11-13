@@ -11,7 +11,7 @@ private:
 public:
     Summator();
     double calculate() override;
-    void logToScreen() override;
-    void logToFile(const std::string& ) override;
+    
+    
 };
 #endif

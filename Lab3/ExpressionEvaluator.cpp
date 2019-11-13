@@ -1,5 +1,6 @@
 #include <iostream>
 #include<ctime>
+#include <fstream>
 #include"ExpressionEvaluator.h"
 
 ExpressionEvaluator::ExpressionEvaluator():ExpressionEvaluator(20){
@@ -56,4 +57,18 @@ std::string ExpressionEvaluator::getString(){
     }
     s+=(")");
     return s;
+}
+
+void ExpressionEvaluator::logToScreen(){
+    std::cout<<getString()<<std::endl;
+}
+
+void ExpressionEvaluator::logToFile(const std::string& filename){
+    std::ofstream out;
+    out.open(filename);
+    if (out.is_open())
+    {
+        out << getString() << std::endl;
+    }
+    out.close();
 }
