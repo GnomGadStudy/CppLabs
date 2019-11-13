@@ -4,6 +4,7 @@
 #define EXPRESSIONEVALUATOR_H
 
 #include "ILoggable.h"
+#include "IShuffle.h"
 
 class ExpressionEvaluator: public ILoggable{
 protected:

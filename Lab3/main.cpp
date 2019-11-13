@@ -11,6 +11,8 @@
 int main(){
     Divisor sm;
     sm.logToScreen();
+    sm.shuffle();
+    sm.logToScreen();
     std::cout<<std::fixed<<std::setprecision(15)<<sm.calculate()<<std::endl;
     sm.logToFile("kek.txt");
     return 0;   

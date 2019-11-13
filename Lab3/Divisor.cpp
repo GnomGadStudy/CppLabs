@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Divisor.h"
-
+#include "IShuffle.h"
 Divisor::Divisor(){
     setRandomOperands();
 }
@@ -25,4 +25,22 @@ void Divisor::logToFile(const std::string& filename){
         out << getString('/') << std::endl;
     }
     out.close();
+}
+
+void Divisor::shuffle(){
+    lshuffle(1,length);
+}
+
+void Divisor::lshuffle(size_t s, size_t e){
+    int key = 0;
+  int i = 0;
+  for(int j = s;j<e;j++){
+    key = operands[j];
+    i = j-1;
+    while(i>=0 && operands[i]<key){
+      operands[i+1] = operands[i];
+      i = i-1;
+      operands[i+1]=key;
+    }
+  }
 }
