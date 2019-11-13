@@ -6,9 +6,9 @@ Divisor::Divisor(){
     setRandomOperands();
 }
 double Divisor::calculate() {
-    double tmp =0;
-    for(int i;i<length;i++)
-        tmp*= operands[i];
+    double tmp =operands[0];
+    for(int i=1;i<length;i++)
+        tmp /= operands[i];
     
     return tmp;
 }

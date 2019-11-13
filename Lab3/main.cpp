@@ -1,4 +1,6 @@
 #include <iostream>
+#include <iomanip>
+
 #include "ILoggable.h"
 #include "ExpressionEvaluator.h"
 #include "Summator.h"
@@ -9,7 +11,7 @@
 int main(){
     Divisor sm;
     sm.logToScreen();
-    std::cout<<sm.calculate()<<std::endl;
+    std::cout<<std::fixed<<std::setprecision(15)<<sm.calculate()<<std::endl;
     sm.logToFile("kek.txt");
     return 0;   
 }

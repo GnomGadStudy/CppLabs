@@ -40,7 +40,7 @@ void ExpressionEvaluator::setOperands(double op[], size_t len){
 void ExpressionEvaluator::setRandomOperands(){
     srand(time(0));
     for(int i=0;i<length;i++)
-        operands[i] = rand()%9;
+        operands[i] = rand()%9+1;
 }
 
 int ExpressionEvaluator::getLenght(){
