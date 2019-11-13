@@ -11,7 +11,7 @@ protected:
     double* operands;
     void setNullOperands();
     void setRandomOperands();
-    std::string getString();
+    std::string getString(char);
 public:
     ExpressionEvaluator();
     ExpressionEvaluator(int);
@@ -20,8 +20,7 @@ public:
     void setOperand(size_t,double);
     void setOperands(double*, size_t);
     int getLenght();
-    void logToScreen() override;
-    void logToFile(const std::string& ) override;
+    
     virtual double calculate() = 0;
 };
 

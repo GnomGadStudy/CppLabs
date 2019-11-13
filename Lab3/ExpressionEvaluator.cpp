@@ -1,6 +1,5 @@
 #include <iostream>
 #include<ctime>
-#include <fstream>
 #include"ExpressionEvaluator.h"
 
 ExpressionEvaluator::ExpressionEvaluator():ExpressionEvaluator(20){
@@ -48,27 +47,13 @@ int ExpressionEvaluator::getLenght(){
     return length;
 }
 
-std::string ExpressionEvaluator::getString(){
+std::string ExpressionEvaluator::getString(char x){
     std::string s = "(";
     for(int i=0;i<length;i++){
         s+=operands[i]+48;
         if(i+1<length)
-            s+="+";
+            s+=x;
     }
     s+=(")");
     return s;
-}
-
-void ExpressionEvaluator::logToScreen(){
-    std::cout<<getString()<<std::endl;
-}
-
-void ExpressionEvaluator::logToFile(const std::string& filename){
-    std::ofstream out;
-    out.open(filename);
-    if (out.is_open())
-    {
-        out << getString() << std::endl;
-    }
-    out.close();
 }
