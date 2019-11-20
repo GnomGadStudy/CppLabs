@@ -16,7 +16,7 @@ public:
     
     void shuffle() override;
     void lshuffle(size_t, size_t) override;
-    ~CustomExpressionEvaluator() override;
+    ~CustomExpressionEvaluator();
 };
 
 #endif

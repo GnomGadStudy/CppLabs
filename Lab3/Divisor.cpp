@@ -48,6 +48,6 @@ void Divisor::lshuffle(size_t s, size_t e){
 }
 
 Divisor::~Divisor(){
-     delete[] operands;
+     //delete[] operands;
     std::cout<<"Divisor has been deleted"<<std::endl;
 }

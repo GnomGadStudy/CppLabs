@@ -30,6 +30,6 @@ void Summator::logToFile(const std::string& filename){
     out.close();
 }
 Summator::~Summator(){
-     delete[] operands;
+    // delete[] operands;
     std::cout<<"Summator has been deleted"<<std::endl;
 }

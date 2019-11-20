@@ -31,6 +31,6 @@ void Subtractor::logToFile(const std::string& filename){
 }
 
 Subtractor::~Subtractor(){
-     delete[] operands;
+    // delete[] operands;
     std::cout<<"Subtractor has been deleted"<<std::endl;
 }

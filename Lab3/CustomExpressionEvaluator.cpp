@@ -53,6 +53,6 @@ void CustomExpressionEvaluator::lshuffle(size_t s, size_t e){
 }
 
 CustomExpressionEvaluator::~CustomExpressionEvaluator(){
-     delete[] operands;
+     //delete[] operands;
     std::cout<<"CustomExpressionEvaluator has been deleted"<<std::endl;
 }

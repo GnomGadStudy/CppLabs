@@ -45,8 +45,7 @@ int main(){
             std::cout <<"It does not cast to IShuffle" << std::endl;
         
 	} 
-    
-     delete[] valuators;
+    for(int i=0;i<3; delete valuators[i++]);
          //std::cout<<std::fixed<<std::setprecision(15)<<.calculate()<<std::endl;
     return 0;   
 }
