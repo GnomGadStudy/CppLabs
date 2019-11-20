@@ -69,9 +69,21 @@
 >#### **Задание 1**
 > Файлы
 >> ```
->> main, ExpressionEvaluator, Summator, Subtractor, Multiplier, Divisor, CustomExpressionEvaluator
+>> main.cpp, ExpressionEvaluator, Summator, Subtractor, Multiplier, Divisor, CustomExpressionEvaluator, ILoggable.h, IShuffle.h
 >> ```
 > Запуск через main.cpp
+>
+>Действия для запуска:
+> Открыть консоль по пути где лежит 1.bat
+> В консоли прописать 1.bat
+> Ждем компиляции, а после выполнения программы.
+
+>#### **Задание 2**
+> Файлы
+>> ```
+>> Main.cpp, Stadium, Court, SportsFacility, ISeasonTicketProvider.h, Season.h, Coating.h
+>> ```
+> Запуск через Main.cpp
 >
 >Действия для запуска:
 > Открыть консоль по пути где лежит 1.bat
