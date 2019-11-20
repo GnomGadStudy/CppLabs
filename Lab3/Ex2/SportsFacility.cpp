@@ -9,8 +9,13 @@ SportsFacility::SportsFacility(std::string adress, int sectors, int capacity, in
     this->area = area;
     this->cover = cover;
     this->tickets = tickets;
-    std::cout<<"SportsFacility has been created"<<std::endl;
+  //  std::cout<<"Batya has included"<<std::endl;
 }
 SportsFacility::~SportsFacility(){
-    std::cout<<"SportsFacility has been deleted"<<std::endl;
+    std::cout<<"Batya has deleted"<<std::endl;
 }
+
+void SportsFacility::ticket(){
+    std::cout<<"Noting, get out here"<<std::endl;
+}
+
