@@ -21,8 +21,8 @@ Card::~Card(){
 
 std::wostream& operator<< (std::wostream& o, Card card) {
     std::wstring s;
-    char c;
-    if(card.point >10)
+    char c = '0';
+    if(card.point >10){
         if(card.point == 11)
             c = 'J';
         else if(card.point == 12)
@@ -31,7 +31,15 @@ std::wostream& operator<< (std::wostream& o, Card card) {
             c = 'K';
         else if(card.point == 14)
             c = 'A';
-    s.append(L" _____ \n");
+    }
+    else
+        s.append(std::to_wstring(card.point));
+    if(c != '0')
+        s.append(1,c);
+    s.append(1,card.suit);
+    
+    
+    /* s.append(L" _____ \n");
     s.append(L"|");
     s.append(1,c);
     s.append(1,card.suit);
@@ -45,7 +53,7 @@ std::wostream& operator<< (std::wostream& o, Card card) {
     s.append(1,c);
     s.append(1,card.suit);
     s.append(L"|\n");
-    s.append(L" ‾‾‾‾‾ \n");
+    s.append(L" ‾‾‾‾‾ \n"); */
     
     o<<s;
     return o;

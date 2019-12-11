@@ -4,13 +4,14 @@
 #include <fcntl.h>
 
 #include "Card.h"
+#include "Deck.h"
 
 int main(){
     setlocale(LC_ALL, "rus");
     _setmode(_fileno(stdout), _O_U16TEXT);
     wchar_t k = L'\u2663';
     wchar_t kk;
-    Card* c = new Card(14,k);
-
-    std::wcout<<*c<<*c;
+    
+    Deck* k1 = new Deck(false);
+    
 }
