@@ -12,13 +12,17 @@ protected:
 bool isNormalDeck;
 void setNormalDeck();
 void setBigDeck();
-std::vector<Card> cards;
-
-
 public:
+std::vector<Card> cards;
 Deck();
 Deck(bool);
 ~Deck();
+
+void shuffle();
+
+Card& getCard();
+
+
 
 };
 

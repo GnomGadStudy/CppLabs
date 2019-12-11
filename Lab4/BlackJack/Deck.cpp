@@ -1,7 +1,11 @@
 #include "Deck.h"
 #include "Card.h"
+
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <random>
+#include <ctime>
 
 Deck::Deck(){
     isNormalDeck = true;
@@ -18,8 +22,27 @@ Deck::Deck(bool isNormalDeck){
     
 }
 Deck::~Deck(){
+
+}
+
+
+void Deck::shuffle(){
+    std::srand(std::time(nullptr));
+    std::random_shuffle(cards.begin(), cards.end());
     
 }
+
+Card& Deck::getCard(){
+    for(int i =0;i<cards.size();i++){  
+        if(cards[i].getPos() == Card::DECK)
+        {
+            cards[i].changePos(Card::HAND);
+            return cards[i];
+        }
+    }
+   
+}
+
 void Deck::setNormalDeck(){
     for(int key = 6;key<15;key++){
         cards.push_back(Card(key,L'\u2665'));

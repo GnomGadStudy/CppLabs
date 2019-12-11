@@ -6,6 +6,7 @@
 Card::Card(int point,const wchar_t suit){
     this->point = point;
     this->suit = suit;
+    pos = position::DECK;
 }
 
 int Card::getPoint(){
@@ -17,6 +18,13 @@ wchar_t Card::getSuit(){
 }
 Card::~Card(){
 
+}
+void Card::changePos(position pos){
+    this->pos = pos;
+}
+
+Card::position Card::getPos(){
+    return pos;
 }
 
 std::wostream& operator<< (std::wostream& o, Card card) {
