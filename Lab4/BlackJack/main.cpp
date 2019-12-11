@@ -11,22 +11,19 @@
 int main(){
     setlocale(LC_ALL, "rus");
     _setmode(_fileno(stdout), _O_U16TEXT);
-    wchar_t k = L'\u2663';
-    wchar_t kk;
+
     Shoe* s = new Shoe();
-  
-     for(Card n:s->decks[0].cards)
+    Hand* h = new Hand();
+    for(Card n:s->decks[0].cards)
     std::wcout<<n<<" ";
-    std::wcout<<"---"<<std::endl;
-    for(Card n:s->decks[1].cards)
-    std::wcout<<n<<" ";
-     std::wcout<<"---"<<std::endl;
-     for(Card n:s->decks[2].cards)
-    std::wcout<<n<<" ";
-     std::wcout<<"---"<<std::endl;
-     for(Card n:s->decks[3].cards)
-    std::wcout<<n<<" ";
-     std::wcout<<"---"<<std::endl;
+    std::wcout<<"---\n"<<std::endl;
     
-    
+    h->setCard(s->getCard());
+    std::wcout<<*h->cards[0]<<" ";
+    h->downCard();
+    h->setCard(s->getCard());
+    std::wcout<<*h->cards[0]<<" ";
+
+    std::wcout<<h->points<<std::endl;
+
 }
