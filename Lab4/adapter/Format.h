@@ -4,10 +4,12 @@
 #define FORMAT_H
 #include <string>
 #include "IFormattable.h"
-class Formattable: public IFormattable{
+class Format: public IFormattable{
 public:
-    virtual std::string format()=0;
-    virtual prettyPrint(const IFormattable& object) = 0;
+Format();
+std::string format() override;
+void prettyPrint(const IFormattable& object) override;
+
 };
 
 
