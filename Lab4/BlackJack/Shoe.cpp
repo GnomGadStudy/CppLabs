@@ -31,5 +31,4 @@ void Shoe::shuffle(){
         else   
             decks[3].shuffle();
     
-    
 }
