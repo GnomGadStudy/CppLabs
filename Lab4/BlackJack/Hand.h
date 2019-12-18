@@ -26,6 +26,10 @@ void printHandDealer();
 void printPointsDealer();
 void refresh();
 
+~Hand(){
+    for(int i =0;i<12;i++)
+        delete cards[i];
+}
 
 };
 #endif

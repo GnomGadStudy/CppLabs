@@ -17,7 +17,6 @@ int balance;
     }
    virtual void printBalance();
    virtual int getBalance();
-    
 };
 
 

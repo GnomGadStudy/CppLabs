@@ -22,7 +22,7 @@ Deck::Deck(bool isNormalDeck){
     
 }
 Deck::~Deck(){
-
+    
 }
 
 
