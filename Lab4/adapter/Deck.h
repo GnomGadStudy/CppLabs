@@ -7,7 +7,7 @@
 #ifndef DECK_H
 #define DECK_H
 
-class Deck:public IFormattable{
+class Deck{
 protected:
 bool isNormalDeck;
 void setNormalDeck();
@@ -17,8 +17,6 @@ std::vector<Card> cards;
 Deck();
 Deck(bool);
 ~Deck();
-std::string format() override;
-void prettyPrint(const IFormattable& object) override;
 
 void shuffle();
 

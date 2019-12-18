@@ -1,11 +1,13 @@
 #include "Deck.h"
 #include "Card.h"
+#include "IFormattable.h"
 
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <random>
 #include <ctime>
+#include <string>
 
 Deck::Deck(){
     isNormalDeck = true;
@@ -59,13 +61,4 @@ void Deck::setBigDeck(){
         cards.push_back(Card(key,L'\u2663'));
         cards.push_back(Card(key,L'\u2660'));
     }
-}
-
-
-std::string Deck::format(){
-std::wcout<<"Deck kek"<<std::endl;
-}
-
-void Deck::prettyPrint(const IFormattable& object){
-
 }

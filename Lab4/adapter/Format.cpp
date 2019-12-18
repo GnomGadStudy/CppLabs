@@ -5,12 +5,16 @@
 #include "Card.h"
 #include "Deck.h"
 #include "Format.h"
+#include <string>
 
-std::string Format::format(){
-std::wcout<<"Deck not a kek"
+Format::Format(){
+
 }
 
-void Format::prettyPrint(const IFormattable& object){
-Deck* kek = dynamic_cast<Deck>( object);
-kek->format();
+std::string Format::format() {
+return "Deck not a kek";
 }
+
+void Format::prettyPrint(const Card& object){
+std::cout<<Format::format()<<std::endl;
+} 
