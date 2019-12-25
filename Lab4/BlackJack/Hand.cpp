@@ -44,10 +44,10 @@ void Hand::printHandDealer(){
 }
 
 void Hand::printPoints(){
-    std::wcout<<"You have a "<<points<<" points"<<std::endl;
+    std::wcout<<L"ó ÒÅÁß "<<points<<L" Î×ÊÎÂ"<<std::endl;
 }
 void Hand::printPointsDealer(){
-    std::wcout<<"Dealer have a "<<points<<" points"<<std::endl;
+    std::wcout<<L"Ó äèëåðà  "<<points<<L" î÷êîâ"<<std::endl;
 }
 void Hand::refresh(){
     numCards =0;

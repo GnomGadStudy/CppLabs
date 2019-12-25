@@ -12,13 +12,16 @@
 #include "Game.h"
 
 int main(){
-    setlocale(LC_ALL, "rus");
-    _setmode(_fileno(stdout), _O_U16TEXT);
+	//setlocale(LC_ALL, "RUSSIAN");
+
+    _wsetlocale(LC_ALL, L"RUSSIAN");
+	_setmode(_fileno(stdout), _O_U16TEXT);
+    
 
     Game* game = new Game();
     int a =1;
     while(a){
-        std::wcout<<"NEW GAME\n\n\n\n"<<std::endl;
+		std::wcout << L"Новая игра\n\n\n\n" << std::endl;
         if(game->getBalancePlayer()<=0)
             break;
         game->gameCycle();

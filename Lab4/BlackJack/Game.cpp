@@ -20,40 +20,40 @@ void Game::initialize(){
 
 void Game::gameCycle(){
     bool flag = true;
-    char key;
+    char key='c';
     player->printBalance();
     while (key!='y'){
-        wcout<<"will we play?[y/n]:";
+        wcout<<L"Будешь играть??[y/n]:";
         cin>> key;
         if(key== 'n'|| key == 'N'){
-            wcout<<"Good luck"<<endl;
+            wcout<<L"Пока"<<endl;
             return ;
         }
     }
-    wcout<<"Time to bet!"<<endl;
+    wcout<<L"Ставь деньги!"<<endl;
     while(true){
         if(!Bet())
             break;
         if(player->getBalance()<=0)
         return ;
     }
-    wcout<<"Dealer is ready! Let's go\n\n"<<endl;
+    wcout<<L"Дилер готов начинать\n\n"<<endl;
     fillHand(*player->hand);
     printHand(*player->hand);
-    wcout<<"\n\n"<<std::endl;
+    wcout<<L"\n\n"<<std::endl;
     fillHand(*dealer->hand);
-    wcout<<"Dealer's hand"<<std::endl;
+    wcout<<L"Рука дилера"<<std::endl;
     if(printHandDealer(*dealer->hand)){
         lose();
         return;
     }
     if(player->balance>=bank*2){
-        wcout<<"will we double?[y/n]";
+        wcout<<L"Удвоить??[y/n]";
         bool kek = true;
         cin>> key;
         if(key=='y'){
             if(player->balance>=bank*3){
-                wcout<<"will we triple?[y/n]";
+                wcout<<L"а может утроить??[y/n]";
                 key ='n';
                 cin>> key;
                 if(key == 'y'){
@@ -100,14 +100,14 @@ int Game::getBalancePlayer(){
     return player->balance;
 }
 void Game::lose(){
-    wcout<<"You lose dealer win "<<bank<<endl;
+    wcout<<L"аххаха, ты проиграл "<<bank<<endl;
     printHand(*dealer->hand);
     player->hand->refresh();
     dealer->hand->refresh();
     bank =0;
 }
 void Game::win(){
-    wcout<<"You win dealer lose"<<bank<<endl;
+    wcout<<L"красава, провал этого неудачника"<<bank<<endl;
     printHand(*dealer->hand);
     player->hand->refresh();
     dealer->hand->refresh();
@@ -124,7 +124,7 @@ void Game::win(){
     bank =0;
 }
 void Game::draw(){
-    wcout<<"You back your draws "<<bank<<endl;
+    wcout<<L"Ничья, деньги ща верну, только отвернись "<<bank<<endl;
     printHand(*dealer->hand);
     player->hand->refresh();
     dealer->hand->refresh();
@@ -153,14 +153,14 @@ void Game::fillHand(Hand &h){
 }
 int Game::appendHand(Hand &h){
     try{
-    char key;
+    char key = 'c';
     while (key!='n'){
-        wcout<<"Hit?[y/n]:";
+        wcout<<L"Еще нада???[y/n]:";
         cin>> key;
         if(key== 'y'|| key == 'Y'){
             
             h.setCard(shoe->getCard());
-            wcout<<"YOUR HAND"<<endl;
+            wcout<<L"ТВОЙ РУКА"<<endl;
             h.printHand();
             h.printPoints();
             if(h.points>21)
@@ -182,16 +182,16 @@ int Game::Bet(){
         return 0;
     int count =0;
     player->printBalance();
-    wcout<<"Make a bet: ";
+    wcout<<L"сДЕЛАТЬ СТАВКУ: ";
     cin>> count;
     if(count<=player->getBalance()){
-        wcout<<"The bid was successfully made"<<endl;
+        wcout<<L"Ставка успешно Сделана"<<endl;
         bank+=count;
         player->balance-=bank;
         return 0;
     }
     else{
-        wcout<<"you don not have so much"<<endl;
+        wcout<<L"у тебя нет столько"<<endl;
         return 1;
     }
 }
@@ -215,7 +215,7 @@ int Game::appendHandDealer(Hand &h){
             if(h.points<=16&&h.points>=13){
                  std::srand(std::time(nullptr));
                  if(rand()%101<=20){
-                     wcout<<"DEALER HAND"<<endl;
+                     wcout<<L"РУКА ДИЛЕРА"<<endl;
                     h.setCard(shoe->getCard());
                     h.printHand();
                     h.printPoints();
@@ -225,7 +225,7 @@ int Game::appendHandDealer(Hand &h){
             if(h.points==12){
                  std::srand(std::time(nullptr));
                  if(rand()%101<=95){
-                     wcout<<"DEALER HAND"<<endl;
+                     wcout<<L"РУКА ДИЛЕРА"<<endl;
                     h.setCard(shoe->getCard());
                     h.printHand();
                     h.printPoints();
@@ -235,7 +235,7 @@ int Game::appendHandDealer(Hand &h){
             if(h.points<12){
                  std::srand(std::time(nullptr));
                  if(rand()%101<=100){
-                     wcout<<"DEALER HAND"<<endl;
+                     wcout<<L"РУКА ДИЛЕРА"<<endl;
                     h.setCard(shoe->getCard());
                     h.printHand();
                     h.printPoints();

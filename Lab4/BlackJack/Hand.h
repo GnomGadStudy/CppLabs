@@ -17,7 +17,7 @@ int numCards;//1 = 0;
 public:
 int points;
 Hand(); 
-Card* cards[12];//Aggregation
+Card& cards[12];//Aggregation
 void setCard(Card &c);
 void downCard();
 void printHand();

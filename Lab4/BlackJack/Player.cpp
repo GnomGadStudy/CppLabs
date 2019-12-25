@@ -8,7 +8,7 @@ Player::Player(int m){
     hand = new Hand();
 }
 void Player::printBalance(){
-    std::wcout<<"Your balance : "<<balance<<std::endl;
+    std::wcout<<L"Ты имеешь бабла ровно столько : "<<balance<<std::endl;
 }
 int Player::getBalance(){
     return balance;
