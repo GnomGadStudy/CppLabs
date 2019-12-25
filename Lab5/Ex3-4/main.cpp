@@ -40,6 +40,7 @@ while (finder != books.end()){
 std:wcout << (*finder)->getAuthor() << " \""<< (*finder)->getName() << "\"" << std::endl;
 finder = std::find_if(++finder, books.end(), book_finder);
 }
+std::wcout<<L"\nМолодых книг: "<<std::count_if(books.begin(),books.end(),[](Book* b1) {return b1->getYear()>2009;});
 
 for (i = books.begin(); i != books.end(); ++i)
 {
