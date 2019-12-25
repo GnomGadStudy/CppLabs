@@ -1,4 +1,4 @@
-#include "DataManager.h"
+﻿#include "DataManager.h"
 #include <iostream>
 
 
@@ -18,7 +18,6 @@ int main(){
 	std::cout<<"\n  "<<dm.pop()<<"  \n";
 	std::wcout<<L" пекнул значение";
 	std::cout<<"\n  "<<dm.peek()<<"  \n";
-	
 	dm.print();
 
 	DataManager<double> dm1;

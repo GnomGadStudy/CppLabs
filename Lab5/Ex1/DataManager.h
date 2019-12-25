@@ -49,9 +49,11 @@ public:
     ~DataManager(){	
 	}
 	void print(){
-		for (int i = 0; i < data.size(); i++) {
-		std::cout << data[i] << std::endl;
-	}
+		//for (int i = 0; i < data.size(); i++) {
+		//std::cout << data[i] << std::endl;
+		for (auto it = data.begin(); it != data.end(); it++)
+  			std::cout << *it << std::endl;
+	//}
 	}
 	void push(T elem);
 	void push(T elems[], int size);
@@ -147,9 +149,11 @@ public:
     ~DataManager(){	
 	}
 	void print(){
-		for (int i = 0; i < data.size(); i++) {
-		std::cout << data[i] << std::endl;
-	}
+		//for (int i = 0; i < data.size(); i++) {
+	//	std::cout << data[i] << std::endl;
+	//}
+	for (auto it = data.begin(); it != data.end(); it++)
+  			std::cout << *it << std::endl;
 	}
 	void push(char elem);
 	void push(char elems[], int size);
